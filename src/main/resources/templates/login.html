@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:security="http://www.springframework.org/schema/security">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1>Welcome to the Lair</h1>
+<!--/*@thymesVar id="param" type=""*/-->
+<!--/*@thymesVar id="error" type=""*/-->
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+
+    <form th:action="@{/login}" method="post">
+
+        <div><label>Username: <input type="text" placeholder="Username" name="username" /></label></div>
+        <div><label>Password:  <input type="password" placeholder="Password" name="password" /></label></div>
+        <a href="#" class="forgot">Forgot password?</a>
+        <div><input type="submit" value="Sign In" /></div>
+
+
+        <!--<div><label> User Name : <input type="text" name="username"/> </label></div>-->
+        <!--<div><label> Password: <input type="password" name="password"/> </label></div>-->
+        <!--<div><input type="submit" value="Sign In"/></div>-->
+    </form>
+
+</body>
+<div class="shadow"></div>
+</html>
